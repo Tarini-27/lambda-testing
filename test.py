@@ -39,7 +39,7 @@ def handler():
     name1 = os.environ['name1']
     file_name = name1.split(' ')
     print(file_name)
-    allowed_files = ["Lambda/sunlife-aman-lambda-test.py","Lambda/Sunlife_cyber_sec_test_1.py"]
+    allowed_files = ["Lambda/sunlife-tarini.py","Lambda/Sunlife_cyber_sec_test_1.py"]
     for name in file_name:
         if name in allowed_files:
             b_name = os.path.basename(name)
