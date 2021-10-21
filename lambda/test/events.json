@@ -12,7 +12,7 @@
         ]
     },
     
-    "sunlife-aman-lambda-test" : {
+    "sunlife-tarini" : {
         "invocationId": "invocationIdExample",
         "deliveryStreamArn": "arn:aws:kinesis:EXAMPLE",
         "region": "us-east-1",
