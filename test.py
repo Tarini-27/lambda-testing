@@ -39,7 +39,7 @@ def handler():
     name1 = os.environ['name1']
     file_name = name1.split(' ')
     print(file_name)
-    allowed_files = ["Lambda/sunlife-tarini.py","Lambda/Sunlife_cyber_sec_test_1.py"]
+    allowed_files = ["lambda/sunlife-tarini.py","lambda/Sunlife_cyber_sec_test_1.py"]
     for name in file_name:
         if name in allowed_files:
             b_name = os.path.basename(name)
@@ -49,7 +49,7 @@ def handler():
             try:
                 print("Testing")
                 os.environ["lambda_func_name"] = fun_name
-                os.chdir(os.getcwd()+"/Lambda/tests/")
+                os.chdir(os.getcwd()+"/lambda/test/")
                 res = pytest.main(["-x","test_lambda.py"])
                 print(res)
                 if res==0:
@@ -63,7 +63,7 @@ def handler():
             os.chdir("../../")   
             # print(os.getcwd())
             try:
-                os.chdir(os.getcwd()+"/Lambda/")
+                os.chdir(os.getcwd()+"/lambda/")
                 zip_file = zipfile.ZipFile(fun_name+'.zip','w')
                 zip_file.write(b_name,compress_type=zipfile.ZIP_DEFLATED)
                 zip_file.close()
