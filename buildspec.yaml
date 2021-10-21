@@ -15,10 +15,10 @@ phases:
       # - git fetch
       # - test=$(git diff --name-only $CODEBUILD_RESOLVED_SOURCE_VERSION^)
       # - echo $test
-      - git clone https://yashodhan_khadilkar@bitbucket.org/yashodhan_khadilkar/aman-lambda.git 
+      - git clone https://github.com/Tarini-27/lambda-testing.git
       - ls
       # - NAME=$(git diff --name-only HEAD^)
-      - cd aman-lambda
+      - cd lambda-testing
       - name=$(git diff --name-only HEAD^)
       - name=$(echo $name)
       - echo $name
