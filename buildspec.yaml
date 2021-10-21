@@ -1,0 +1,35 @@
+version: 0.2
+env:
+  git-credential-helper: yes
+exported-variables:
+  - CODEBUILD_RESOLVED_SOURCE_VERSION
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install pytest
+  build:
+    commands:
+      # - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+      # - git fetch
+      # - test=$(git diff --name-only $CODEBUILD_RESOLVED_SOURCE_VERSION^)
+      # - echo $test
+      - git clone https://yashodhan_khadilkar@bitbucket.org/yashodhan_khadilkar/aman-lambda.git 
+      - ls
+      # - NAME=$(git diff --name-only HEAD^)
+      - cd aman-lambda
+      - name=$(git diff --name-only HEAD^)
+      - name=$(echo $name)
+      - echo $name
+      - name1=$name
+      - export name1
+  post_build:
+    commands:
+      - python --version
+      # - pip install aws_logging_handlers
+      - python test.py
+artifacts:
+  type: zip
+  files:
+    - '**/*'
