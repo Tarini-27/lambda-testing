@@ -10,6 +10,7 @@ import sl_custom_date_lib as sl_custom_dt_lib
 import uuid
 import os
 
+
 s3 = boto3.client('s3')
 '''For Failed Lines - Regex Transform'''
 bucket = "sunlife-cyber-security-firehose"
